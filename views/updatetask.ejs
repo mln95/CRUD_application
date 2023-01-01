@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDATE TASK</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/tasks.css">
+</head>
+<div id="block_form">
+    <div id="align_form">        
+        <form method="POST" id="update">
+            <label>Update task</label><br>
+            <p id="id">id = <%= task._id%></p>
+            <input type="text" name="task" size="30" value="<%= task.task%>">
+            <input type="hidden" name="id" value="<%= task._id %>">
+            <button type="submit" id="submit">Submit</button>
+    </form>
+</div>
+<script src="/js/index.js"></script>
+</html>

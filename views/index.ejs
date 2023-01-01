@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD APPLICATION</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/tasks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="block_form">
+        <div id="align_form">        
+            <form method="POST" action="/api/v1/task">
+                <label>Task Manager</label><br>
+                <input type="text" name="task" size="30" placeholder="Wash dishes" onfocus="this.placeholder=''" onblur="this.placeholder='Wash dishes'">
+                <button type="submit" id="submitTask">Submit</button>
+        </form>
+    </div>
+
+    </div>
+    <div id="block_tasks">
+     <% for(let i=0; i < task.length; i++) { %>
+        <div class="align_task">
+            <p><%= task[i].task %> </p>
+        <div id="icons">            
+            <a href="/updatetask?id=<%= task[i]._id%>"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class='delete' data-id="<%= task[i]._id%>"><i class="fa-solid fa-trash"></i></a>
+        </div>
+        </div>
+     <% } %>
+    </div>
+    <script src="/js/index.js"></script>
+</body>
+</html>
